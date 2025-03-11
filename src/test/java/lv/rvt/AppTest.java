@@ -8,8 +8,8 @@ public class AppTest {
     analize analyzer = new analize();
 
     while (true) {
-      System.out.println("\nChoose an option:");
-      System.out.println("1. Calculate nutrition");
+      System.out.println("Choose an option:");
+      System.out.println("1. Calculate nutrition ");
       int choice = scanner.nextInt();
       scanner.nextLine();
       if (choice==1) {
@@ -30,8 +30,6 @@ public class AppTest {
     double carbs = scanner.nextDouble();
     System.out.print("Enter fat (g per 100g): ");
     double fat = scanner.nextDouble();
-    System.out.print("Enter kcal (per 100g): ");
-    int kcal = scanner.nextInt();
     System.out.print("Enter quantity (grams): ");
     double quantity = scanner.nextDouble();
   
@@ -39,14 +37,15 @@ public class AppTest {
     analyzer.setProtein(protein);
     analyzer.setCarbs(carbs);
     analyzer.setFat(fat);
-    analyzer.setKcal(kcal);
     analyzer.setQuantity(quantity);
+    
 
     System.out.println("\nNutrition for " + quantity + "g of " + name + ":");
     System.out.println("Protein: " + analyzer.calculateProtein() + "g");
     System.out.println("Carbs: " + analyzer.calculateCarbs() + "g");
     System.out.println("Fat: " + analyzer.calculateFat() + "g");
-    System.out.println("Kcal: " + analyzer.calculateKcal() + " kcal");
-  }
+    System.out.println("Kcal: " + analyzer.calculateKcal() + " kcal. Approx."+(int)analyzer.calculateKcal());
+
+}
 
 }

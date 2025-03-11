@@ -5,7 +5,7 @@ public class analize {
     private double protein;
     private double carbs;
     private double fat;
-    private int kcal;
+    private double kcal;
     private double quantity;
 
     public void setName(String name) {
@@ -24,10 +24,6 @@ public class analize {
         this.fat = fat;
     }
 
-    public void setKcal(int kcal) {
-        this.kcal = kcal;
-    }
-
     public void setQuantity(double quantity) {
         this.quantity = quantity;
     }
@@ -44,7 +40,11 @@ public class analize {
         return (fat / 100.0) * quantity;
     }
 
-    public int calculateKcal() {
-        return (int) ((kcal / 100.0) * quantity);
+    public double calculateKcal() {
+        return (calculateCarbs()*4+calculateFat()*9+calculateProtein()*4);
+    }
+    
+    public void setkCal(double kcal) {
+        this.kcal = kcal;
     }
 }
