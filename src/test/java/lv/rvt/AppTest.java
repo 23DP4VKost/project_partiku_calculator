@@ -5,47 +5,54 @@ import java.util.Scanner;
 public class AppTest {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
-    analize analyzer = new analize();
+    Library foodLibrary = new Library();
 
     while (true) {
       System.out.println("Choose an option:");
-      System.out.println("1. Calculate nutrition ");
+      System.out.println("1. Add a new food item");
+      System.out.println("2.Food Library(Edit/Delete)");
+      System.out.println("3. Save the food library to a CSV file");
+
       int choice = scanner.nextInt();
       scanner.nextLine();
-      if (choice==1) {
-        calculation(scanner, analyzer);} 
 
-      else {
-        System.out.println("Invalid choice.");
+      if (choice==1) {
+        Analyzer.addFoodItem(scanner, foodLibrary);
+        }
+
+      else if (choice==2){
+        while (true) {
+              
+          System.out.println("Choose an option:");
+          System.out.println("1. View food library");
+          System.out.println("2. Edit a food item");
+          System.out.println("3. Delete a food item");
+
+          int choice2 = scanner.nextInt();
+          scanner.nextLine();
+          if (choice2==1){
+            System.out.println(foodLibrary.getLibrary());
+              break;}
+          else if (choice2==2){
+              Library.editFoodItem(scanner, foodLibrary);
+              break;}
+
+          else if (choice==3){
+              Library.deleteFoodItem(scanner, foodLibrary);
+              break;}
+              }
+
+            }
+
+
+      else if (choice==3){
+        Analyzer.saveToCsv(scanner, foodLibrary);
           }
+ 
+      else{
+         System.out.println("Invalid choice. Please try again.");
+        }
     }
   }
-
-  private static void calculation(Scanner scanner, analize analyzer) {
-    System.out.print("Enter food name: ");
-    String name = scanner.nextLine();
-    System.out.print("Enter protein (g per 100g): ");
-    double protein = scanner.nextDouble();
-    System.out.print("Enter carbs (g per 100g): ");
-    double carbs = scanner.nextDouble();
-    System.out.print("Enter fat (g per 100g): ");
-    double fat = scanner.nextDouble();
-    System.out.print("Enter quantity (grams): ");
-    double quantity = scanner.nextDouble();
-  
-    analyzer.setName(name);
-    analyzer.setProtein(protein);
-    analyzer.setCarbs(carbs);
-    analyzer.setFat(fat);
-    analyzer.setQuantity(quantity);
-    
-
-    System.out.println("\nNutrition for " + quantity + "g of " + name + ":");
-    System.out.println("Protein: " + analyzer.calculateProtein() + "g");
-    System.out.println("Carbs: " + analyzer.calculateCarbs() + "g");
-    System.out.println("Fat: " + analyzer.calculateFat() + "g");
-    System.out.println("Kcal: " + analyzer.calculateKcal() + " kcal. Approx."+(int)analyzer.calculateKcal());
-
-}
 
 }
