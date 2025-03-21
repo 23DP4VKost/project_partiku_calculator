@@ -6,7 +6,6 @@ import java.util.Scanner;
 public class Library {
     private ArrayList<Food> foodList;
 
-
     public Library() {
         this.foodList = new ArrayList<>();
     }
@@ -29,6 +28,7 @@ public class Library {
 
     public Food getFood(int index) {
         if (index >= 0 && index < foodList.size()) {
+            /// Update ObjectToString
             return foodList.get(index);
         }
         return null;
@@ -52,17 +52,20 @@ public class Library {
         System.out.println("Enter new food name:");
         String name = scanner.nextLine();
 
+/// Update edit
         System.out.println("Enter new protein per 100g:");
         double protein = scanner.nextDouble();
         System.out.println("Enter new fat per 100g:");
         double fat = scanner.nextDouble();
         System.out.println("Enter new carbs per 100g:");
         double carbs = scanner.nextDouble();
-        System.out.println("Enter new kcal per 100g:");
-        double kcal = scanner.nextDouble();
+        double kcal = 4 * protein + 9 * fat + 4 * carbs;
+        System.out.println("Enter the quantity consumed (in grams):");
+        double quantity = scanner.nextDouble();
         scanner.nextLine();
 
-        Food food = new Food(name, protein, fat, carbs, kcal);
+
+        Food food = new Food(name, protein, fat, carbs, kcal, quantity);
         foodLibrary.editFood(index, food);
         System.out.println("Food item edited successfully.");
     }
@@ -82,4 +85,3 @@ public class Library {
         System.out.println("Food item deleted successfully.");
     }
 }
-

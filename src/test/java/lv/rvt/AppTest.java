@@ -17,12 +17,11 @@ public class AppTest {
       scanner.nextLine();
 
       if (choice==1) {
-        Analyzer.addFoodItem(scanner, foodLibrary);
+        FoodAdd.addFoodItem(scanner, foodLibrary);
         }
 
       else if (choice==2){
-        while (true) {
-              
+        while (true) {        
           System.out.println("Choose an option:");
           System.out.println("1. View food library");
           System.out.println("2. Edit a food item");
@@ -30,9 +29,11 @@ public class AppTest {
 
           int choice2 = scanner.nextInt();
           scanner.nextLine();
+
           if (choice2==1){
             System.out.println(foodLibrary.getLibrary());
               break;}
+              
           else if (choice2==2){
               Library.editFoodItem(scanner, foodLibrary);
               break;}
@@ -44,9 +45,8 @@ public class AppTest {
 
             }
 
-
       else if (choice==3){
-        Analyzer.saveToCsv(scanner, foodLibrary);
+        saveFile.saveToFile(scanner, foodLibrary);
           }
  
       else{
