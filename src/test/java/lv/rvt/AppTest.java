@@ -10,7 +10,7 @@ public class AppTest {
     while (true) {
       System.out.println("Choose an option:");
       System.out.println("1. Add a new food item");
-      System.out.println("2.Food Library(Edit/Delete)");
+      System.out.println("2.Food Library(View/Edit/Delete)");
       System.out.println("3. Save the food library to a CSV file");
 
       int choice = scanner.nextInt();
@@ -32,21 +32,25 @@ public class AppTest {
 
           if (choice2==1){
             System.out.println(foodLibrary.getLibrary());
-              break;}
+              break;
+            }
               
           else if (choice2==2){
               Library.editFoodItem(scanner, foodLibrary);
-              break;}
+              break;
+            }
 
-          else if (choice==3){
-              Library.deleteFoodItem(scanner, foodLibrary);
-              break;}
+
+              else if (choice==3){
+              // fix Library.deleteFood();
+              break;
+            }
               }
 
             }
 
       else if (choice==3){
-        saveFile.saveToFile(scanner, foodLibrary);
+    // fix   saveFile.saveToFile(scanner, foodLibrary);
           }
  
       else{

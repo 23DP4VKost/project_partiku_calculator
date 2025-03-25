@@ -16,21 +16,17 @@ public class FoodAdd {
         double carbsPer100g = scanner.nextDouble();
         System.out.println("Enter the quantity consumed (in grams):");
         double quantity = scanner.nextDouble();
+        double kcal = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
         scanner.nextLine();
 
-        double totalProtein = (proteinPer100g * quantity) / 100;
-        double totalFat = (fatPer100g * quantity) / 100;
-        double totalCarbs = (carbsPer100g * quantity) / 100;
-        double kcal = (proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4) * (quantity / 100);
-
-        Food food = new Food(name, totalProtein, totalFat, totalCarbs, kcal, quantity);
+        Food food = new Food(name, proteinPer100g, fatPer100g, carbsPer100g,kcal,quantity);
         foodLibrary.addFood(food);
 
         System.out.println("Food item added successfully.");
-        System.out.println("Total Protein: " + food.getTotalProtein() + "g");
-        System.out.println("Total Fat: " + food.getTotalFat() + "g");
-        System.out.println("Total Carbs: " + food.getTotalCarbs() + "g");
-        System.out.println("Total Calories: " + food.getTotalKcal() + "kcal");
-    }
+        System.out.println("Total Protein: " + food.calculateTotalProtein() + "g");
+        System.out.println("Total Fat: " + food.calculateTotalFat() + "g");
+        System.out.println("Total Carbs: " + food.calculateTotalCarbs() + "g");
+        System.out.println("Total Calories: " + food.calculateTotalKcal() + "kcal");
 
+    }
 }
