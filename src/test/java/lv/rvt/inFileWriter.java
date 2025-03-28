@@ -7,6 +7,7 @@ import java.util.ArrayList;
 /// Update formatting
 public class inFileWriter {
     public static void FileWriting(ArrayList<Food> foodList, String filename) throws IOException {
+        
         FileWriter writer = new FileWriter(filename);
 
         writer.append("Name|Quantity (g)|Total Protein (g)|Total Fat (g)|Total Carbs (g)|Total Kcal\n");

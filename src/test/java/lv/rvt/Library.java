@@ -83,4 +83,19 @@ public class Library {
         foodLibrary.editFood(index, food);
         System.out.println("Food item edited successfully.");
     }
+
+  public static void deleteFood(Scanner scanner, Library foodLibrary) {
+        System.out.println(foodLibrary.getLibrary());
+        System.out.println("Enter the index of the food item to delete:");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+
+        if (index < 0 || index >= foodLibrary.getFoodList().size()) {
+            System.out.println("Invalid index.");
+            return;
+        }
+
+        foodLibrary.deleteFood(index);
+        System.out.println("Food item deleted successfully.");
+    }  
 }

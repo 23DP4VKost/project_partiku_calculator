@@ -42,7 +42,7 @@ public class AppTest {
 
 
               else if (choice==3){
-              // fix Library.deleteFood();
+              Library.deleteFood(scanner, foodLibrary);
               break;
             }
               }
@@ -50,7 +50,7 @@ public class AppTest {
             }
 
       else if (choice==3){
-    // fix   saveFile.saveToFile(scanner, foodLibrary);
+          saveFile.saveToFile(scanner, foodLibrary);
           }
  
       else{
