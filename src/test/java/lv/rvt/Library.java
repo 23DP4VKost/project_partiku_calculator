@@ -38,16 +38,19 @@ public class Library {
     }
 
     public String getLibrary() {
-        StringBuilder productInfo = new StringBuilder();///add id to the list
-        productInfo.append("Name | Quantity (g) | Total Protein (g) | Total Fat (g) | Total Carbs (g) | Total Kcal\n");
-    productInfo.append("--------------------------------------------------------------------------------------\n");
+        StringBuilder productInfo = new StringBuilder();
+        System.out.println();
+        productInfo.append(String.format("| %-20s | %-15s | %-20s | %-15s | %-20s | %-15s|\n", 
+            "Name", "Quantity (g)", "Total Protein (g)", "Total Fat (g)", "Total Carbs (g)", "Total Kcal"));
+        productInfo.append("-------------------------------------------------------------------------------------------------------------------------------------------\n");
         for (Food food : foodList) {
-            productInfo.append(food.getName()).append(" | ")
-              .append(food.getQuantity()).append(" | ")
-              .append(food.calculateTotalProtein()).append(" | ")
-              .append(food.calculateTotalFat()).append(" | ")
-              .append(food.calculateTotalCarbs()).append(" | ")
-              .append(food.calculateTotalKcal()).append("\n");
+            productInfo.append(String.format("%-20s | %-15.2f | %-20.2f | %-15.2f | %-20.2f | %-15.2f\n", 
+                food.getName(), 
+                food.getQuantity(), 
+                food.calculateTotalProtein(), 
+                food.calculateTotalFat(), 
+                food.calculateTotalCarbs(), 
+                food.calculateTotalKcal()));
         }
         return productInfo.toString();
     }
@@ -73,8 +76,7 @@ public class Library {
         double fatPer100g = scanner.nextDouble();
         System.out.println("Enter new carbs per 100g:");
         double carbsPer100g = scanner.nextDouble();
-        System.out.println("Enter new kcal per 100g:");
-        double kcalPer100g = scanner.nextDouble();
+        double kcalPer100g = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
         System.out.println("Enter the quantity consumed (in grams):");
         double quantity = scanner.nextDouble();
         scanner.nextLine();
