@@ -7,6 +7,11 @@ public class AppTest {
     Scanner scanner = new Scanner(System.in);
     Library foodLibrary = new Library();
 
+    System.out.println("=========================================");
+    System.out.println("   WELCOME TO THE MACRO CALCULATOR APP   ");
+    System.out.println("=========================================");
+    System.out.println("Track your food macros and calories easily!\n");
+
     while (true) {
       System.out.println("Choose an option:");
       System.out.println("1. Add a new food item");

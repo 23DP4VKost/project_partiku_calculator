@@ -5,6 +5,11 @@ import java.util.Scanner;
 public class FoodAdd {
 /// wipe console after action
     public static void addFoodItem(Scanner scanner, Library foodLibrary) {
+        
+        System.out.println("\n===============================");
+        System.out.println("       ADD A NEW FOOD ITEM     ");
+        System.out.println("===============================\n");
+
         System.out.println("Enter food name:");
         String name = scanner.nextLine();
 

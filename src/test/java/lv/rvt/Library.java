@@ -26,12 +26,7 @@ public class Library {
         }
     }
 
-    public Food getFood(int index) {
-        if (index >= 0 && index < foodList.size()) {
-            return foodList.get(index);
-        }
-        return null;
-    }
+
 
     public ArrayList<Food> getFoodList() {
         return foodList;
@@ -40,11 +35,13 @@ public class Library {
     public String getLibrary() {
         StringBuilder productInfo = new StringBuilder();
         System.out.println();
-        productInfo.append(String.format("| %-20s | %-15s | %-20s | %-15s | %-20s | %-15s|\n", 
-            "Name", "Quantity (g)", "Total Protein (g)", "Total Fat (g)", "Total Carbs (g)", "Total Kcal"));
-        productInfo.append("-------------------------------------------------------------------------------------------------------------------------------------------\n");
-        for (Food food : foodList) {
-            productInfo.append(String.format("%-20s | %-15.2f | %-20.2f | %-15.2f | %-20.2f | %-15.2f\n", 
+        productInfo.append(String.format("| %-5s | %-20s | %-15s | %-20s | %-15s | %-20s | %-15s|\n", 
+            "ID", "Name", "Quantity (g)", "Total Protein (g)", "Total Fat (g)", "Total Carbs (g)", "Total Kcal"));
+        productInfo.append("--------------------------------------------------------------------------------------------------------------------------------\n");
+        for (int i = 0; i < foodList.size(); i++) {
+            Food food = foodList.get(i);
+            productInfo.append(String.format("| %-5d | %-20s | %-15.2f | %-20.2f | %-15.2f | %-20.2f | %-15.2f|\n", 
+                i+1, 
                 food.getName(), 
                 food.getQuantity(), 
                 food.calculateTotalProtein(), 
@@ -55,17 +52,23 @@ public class Library {
         return productInfo.toString();
     }
 
-// edit by id
     public static void editFoodItem(Scanner scanner, Library foodLibrary) {
+        
+        System.out.println("\n===============================");
+        System.out.println("       EDIT A FOOD ITEM        ");
+        System.out.println("===============================\n");
+
         System.out.println(foodLibrary.getLibrary());
         System.out.println("Enter the index of the food item to edit:");
         int index = scanner.nextInt();
         scanner.nextLine();
+        int userInput = index - 1;
 
-        if (index < 0 || index >= foodLibrary.getFoodList().size()) {
+        if ( index < 0 || index >= foodLibrary.getFoodList().size()) {
             System.out.println("Invalid index.");
             return;
         }
+
 
         System.out.println("Enter new food name:");
         String name = scanner.nextLine();
@@ -82,22 +85,28 @@ public class Library {
         scanner.nextLine();
 
         Food food = new Food(name, proteinPer100g, fatPer100g, carbsPer100g, kcalPer100g, quantity);
-        foodLibrary.editFood(index, food);
+        foodLibrary.editFood(userInput, food);
         System.out.println("Food item edited successfully.");
     }
 
   public static void deleteFood(Scanner scanner, Library foodLibrary) {
+
+    System.out.println("\n===============================");
+    System.out.println("       DELETE A FOOD ITEM      ");
+    System.out.println("===============================\n");
+
         System.out.println(foodLibrary.getLibrary());
         System.out.println("Enter the index of the food item to delete:");
         int index = scanner.nextInt();
         scanner.nextLine();
+        int userInput = index - 1;
 
         if (index < 0 || index >= foodLibrary.getFoodList().size()) {
             System.out.println("Invalid index.");
             return;
         }
 
-        foodLibrary.deleteFood(index);
+        foodLibrary.deleteFood(userInput);
         System.out.println("Food item deleted successfully.");
     }  
 }
