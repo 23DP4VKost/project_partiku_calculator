@@ -16,7 +16,7 @@ public class AppTest {
       System.out.println("Choose an option:");
       System.out.println("1. Add a new food item");
       System.out.println("2.Food Library(View/Edit/Delete)");
-      System.out.println("3. Save the food library to a CSV file");
+      System.out.println("3. Save the food library to a TXT file");
 
       int choice = scanner.nextInt();
       scanner.nextLine();

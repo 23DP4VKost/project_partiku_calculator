@@ -14,11 +14,11 @@ public class saveFile {
         
             inFileWriter.FileWriting(foodLibrary.getFoodList(), filename);
 
-            System.out.println("Food library saved to " + filename);
+            System.out.println("Food library saved to " + filename+""+".txt");
         } 
         
         catch (IOException e) {
-            System.out.println("Error saving to CSV file: " + e.getMessage());
+            System.out.println("Error saving to txt file: " + e.getMessage());
         }
     }
 }
