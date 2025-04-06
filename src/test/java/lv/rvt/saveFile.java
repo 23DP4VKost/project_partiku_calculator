@@ -15,6 +15,10 @@ public class saveFile {
             inFileWriter.FileWriting(foodLibrary.getFoodList(), filename);
 
             System.out.println("Food library saved to " + filename+""+".txt");
+            System.out.println();
+            System.out.println("Press Enter to continue...");
+            scanner.nextLine();
+            clearConsole.ClearConsole();
         } 
         
         catch (IOException e) {

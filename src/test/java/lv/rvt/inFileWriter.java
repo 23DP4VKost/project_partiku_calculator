@@ -10,14 +10,17 @@ public class inFileWriter {
         
         FileWriter writer = new FileWriter(filename+".txt");
 
-        writer.append("Name|Quantity (g)|Total Protein (g)|Total Fat (g)|Total Carbs (g)|Total Kcal\n");
+        writer.append(String.format("%-20s|%-15s|%-20s|%-20s|%-20s|%-15s\n", "Name", "Quantity (g)", "Total Protein (g)", "Total Fat (g)", "Total Carbs (g)", "Total Kcal"));
         for (Food food : foodList) {
-            writer.append(food.getName()).append("|");
-            writer.append(String.valueOf(food.getQuantity())).append("|");
-            writer.append(String.valueOf(food.calculateTotalProtein())).append("|");
-            writer.append(String.valueOf(food.calculateTotalFat())).append("|");
-            writer.append(String.valueOf(food.calculateTotalCarbs())).append("|");
-            writer.append(String.valueOf(food.calculateTotalKcal())).append("\n");
+            writer.append("--------------------------------------------------------------------------------------------------------------------------------\n");
+            writer.append(String.format("%-20s|%-15.2f|%-20.2f|%-20.2f|%-20.2f|%-15.2f\n", 
+                food.getName(), 
+                food.getQuantity(), 
+                food.calculateTotalProtein(), 
+                food.calculateTotalFat(), 
+                food.calculateTotalCarbs(), 
+                food.calculateTotalKcal()));
+            writer.append("--------------------------------------------------------------------------------------------------------------------------------\n");
         }
 
         writer.flush();

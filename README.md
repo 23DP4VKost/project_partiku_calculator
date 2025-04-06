@@ -6,10 +6,8 @@ Makro kalkulators ir konsoles Java lietojumprogramma, kas palīdz lietotājiem a
 ---
 
 ## Saturs
-1. [Funkcijas un lietojumi] 
-2. [Kā tas darbojas]
-
-
+1. [Funkcijas un lietojumi](#funkcijas-un-lietojumi) 
+2. [Kā tas darbojas](#kā-tas-darbojas)
 
 ---
 
@@ -27,9 +25,11 @@ Makro kalkulators ir konsoles Java lietojumprogramma, kas palīdz lietotājiem a
 
 ## Kā tas darbojas
 
-- 1. **Ievadiet informāciju par pārtiku**: lietotāji norāda uzturvērtības uz 100 g un patērēto daudzumu.
-- 2. **Aprēķināt kopējo daudzumu**: programma aprēķina kopējo olbaltumvielu, tauku, ogļhidrātu un kaloriju daudzumu, pamatojoties uz daudzumu.
-- 3. **Pārvaldīt pārtikas bibliotēku**: lietotāji var pievienot, rediģēt, dzēst un skatīt pārtikas produktus bibliotēkā.
-- 4. **Saglabāt datus**: lietotāji var saglabāt pārtikas bibliotēku .txt failā turpmākai analīzei.
+- 1)  **Ievadiet informāciju par pārtiku**: lietotāji norāda uzturvērtības uz 100 g un patērēto daudzumu.
+- 2)  **Aprēķināt kopējo daudzumu**: programma aprēķina kopējo olbaltumvielu, tauku, ogļhidrātu un kaloriju daudzumu, pamatojoties uz daudzumu.
+- 3) **Pārvaldīt pārtikas bibliotēku**: lietotāji var pievienot, rediģēt, dzēst un skatīt pārtikas produktus bibliotēkā.
+- 4)  **Saglabāt datus**: lietotāji var saglabāt pārtikas bibliotēku .txt failā turpmākai analīzei.
 
 ---
+
+## 

@@ -19,6 +19,7 @@ public class AppTest {
       System.out.println("3. Save the food library to a TXT file");
 
       int choice = scanner.nextInt();
+      clearConsole.ClearConsole();
       scanner.nextLine();
 
       if (choice==1) {
@@ -36,18 +37,21 @@ public class AppTest {
           scanner.nextLine();
 
           if (choice2==1){
+            clearConsole.ClearConsole();
             System.out.println(foodLibrary.getLibrary());
               break;
             }
               
           else if (choice2==2){
+            clearConsole.ClearConsole();
               Library.editFoodItem(scanner, foodLibrary);
               break;
             }
 
 
-              else if (choice==3){
+              else if (choice2==3){
               Library.deleteFood(scanner, foodLibrary);
+              clearConsole.ClearConsole();
               break;
             }
               }

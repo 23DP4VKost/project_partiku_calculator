@@ -3,7 +3,7 @@ package lv.rvt;
 import java.util.Scanner;
 
 public class FoodAdd {
-/// wipe console after action
+
     public static void addFoodItem(Scanner scanner, Library foodLibrary) {
         
         System.out.println("\n===============================");
@@ -26,7 +26,9 @@ public class FoodAdd {
 
         Food food = new Food(name, proteinPer100g, fatPer100g, carbsPer100g,kcal,quantity);
         foodLibrary.addFood(food);
+        System.out.println();
 
+        
         System.out.println(name + " added successfully.");
         System.out.println();
         System.out.println("Total Protein: " + food.calculateTotalProtein() + "g");
@@ -34,6 +36,11 @@ public class FoodAdd {
         System.out.println("Total Carbs: " + food.calculateTotalCarbs() + "g");
         System.out.println("Total Calories: " + food.calculateTotalKcal() + "kcal");
         System.out.println();
+        System.out.println("Press Enter to continue...");
+        scanner.nextLine();
+        clearConsole.ClearConsole();
+        
+
 
     }
 }
