@@ -30,6 +30,6 @@ Makro kalkulators ir konsoles Java lietojumprogramma, kas palīdz lietotājiem a
 - 3) **Pārvaldīt pārtikas bibliotēku**: lietotāji var pievienot, rediģēt, dzēst un skatīt pārtikas produktus bibliotēkā.
 - 4)  **Saglabāt datus**: lietotāji var saglabāt pārtikas bibliotēku .txt failā turpmākai analīzei.
 
+- **Priekš kcal funkciju** ir izmantots formula,kurš 1g proteina ir 4 kcal, 1g tauka ir 9 kcal un  1g ogļhidrāti ir 4 kcal
 ---
 
-## 

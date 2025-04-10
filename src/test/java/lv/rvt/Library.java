@@ -38,7 +38,7 @@ public class Library {
         productInfo.append(ConsoleColors.YELLOW).append("--------------------------------------------------------------------------------------------------------------------------------\n").append(ConsoleColors.RESET);
         for (int i = 0; i < foodList.size(); i++) {
             Food food = foodList.get(i);
-            productInfo.append(ConsoleColors.GREEN).append(String.format("| %-5d | %-20s | %-15.2f | %-20.2f | %-15.2f | %-20.2f | %-15.2f|\n", 
+            productInfo.append(ConsoleColors.BLACK_BACKGROUND_BRIGHT).append(ConsoleColors.GREEN).append(String.format("| %-5d | %-20s | %-15.2f | %-20.2f | %-15.2f | %-20.2f | %-15.2f|\n", 
                 i+1, 
                 food.getName(), 
                 food.getQuantity(), 
@@ -52,9 +52,9 @@ public class Library {
     }
 
     public static void editFoodItem(Scanner scanner, Library foodLibrary) {
-        System.out.println("\n===============================");
-        System.out.println("       EDIT A FOOD ITEM        ");
-        System.out.println("===============================\n");
+        System.out.println("\n==================================================================================================");
+        System.out.println("                                          EDIT A FOOD ITEM                                         ");
+        System.out.println("==================================================================================================\n");
 
         System.out.println(foodLibrary.getLibrary());
         System.out.println("Enter the ID of the food item to edit:");
@@ -62,7 +62,7 @@ public class Library {
         scanner.nextLine();
 
         if (index <= 0 || index > foodLibrary.getFoodList().size()) {
-            System.out.println("Invalid index. Please try again.");
+            System.out.println ("Invalid ID. Please try again.");
             System.out.println("Press Enter to continue...");
             scanner.nextLine();
             clearConsole.ClearConsole();
@@ -92,9 +92,9 @@ public class Library {
     }
 
     public static void deleteFood(Scanner scanner, Library foodLibrary) {
-        System.out.println("\n===============================");
-        System.out.println("       DELETE A FOOD ITEM      ");
-        System.out.println("===============================\n");
+        System.out.println("\n==================================================================================================");
+        System.out.println("                                        DELETE A FOOD ITEM                                         ");
+        System.out.println("==================================================================================================\n");
 
         System.out.println(foodLibrary.getLibrary());
         System.out.println("Enter the ID of the food item to delete:");

@@ -4,7 +4,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/// Update formatting
 public class inFileWriter {
     public static void FileWriting(ArrayList<Food> foodList, String filename) throws IOException {
         
