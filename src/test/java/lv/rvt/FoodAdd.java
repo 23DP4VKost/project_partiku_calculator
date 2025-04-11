@@ -15,12 +15,16 @@ public class FoodAdd {
 
         System.out.println("Enter protein per 100g:");
         double proteinPer100g = scanner.nextDouble();
+
         System.out.println("Enter fat per 100g:");
         double fatPer100g = scanner.nextDouble();
+
         System.out.println("Enter carbs per 100g:");
         double carbsPer100g = scanner.nextDouble();
+        
         System.out.println("Enter the quantity consumed (in grams):");
         double quantity = scanner.nextDouble();
+
         double kcal = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
         scanner.nextLine();
 
