@@ -1,7 +1,8 @@
 package lv.rvt;
-///sort system
+
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Comparator;
 
 public class Library {
     private ArrayList<Food> foodList;
@@ -30,7 +31,7 @@ public class Library {
         return foodList;
     }
 
-    public String getLibrary() {
+    public String getLibrary(Scanner scanner) {
         StringBuilder productInfo = new StringBuilder();
         System.out.println();
         productInfo.append(ConsoleColors.BLUE_BOLD).append(String.format("| %-5s | %-20s | %-15s | %-20s | %-15s | %-20s | %-15s|\n", 
@@ -46,9 +47,39 @@ public class Library {
                 food.calculateTotalFat(), 
                 food.calculateTotalCarbs(), 
                 food.calculateTotalKcal())).append(ConsoleColors.RESET);
-                productInfo.append(ConsoleColors.YELLOW).append("--------------------------------------------------------------------------------------------------------------------------------\n").append(ConsoleColors.RESET);
+            productInfo.append(ConsoleColors.YELLOW).append("--------------------------------------------------------------------------------------------------------------------------------\n").append(ConsoleColors.RESET);
         }
+        System.out.println(productInfo.toString());
+
+
+        System.out.println("Would you like to sort the library? (yes/no)");
+        String sortChoice = scanner.nextLine();
+        if (sortChoice.equalsIgnoreCase("yes")) {
+            System.out.println("Enter sorting criteria (name, protein, fat, carbs, kcal):");
+            String criteria = scanner.nextLine();
+            sortFoodList(criteria);
+            System.out.println("Food library sorted by " + criteria + ".");
+            return getLibrary(scanner); 
+        }
+
         return productInfo.toString();
+    }
+
+    public void sortFoodList(String criteria) {
+        
+        if (criteria.equalsIgnoreCase("name")) {
+            foodList.sort(Comparator.comparing(Food::getName));
+        } else if (criteria.equalsIgnoreCase("protein")) {
+            foodList.sort(Comparator.comparing(Food::calculateTotalProtein).reversed());
+        } else if (criteria.equalsIgnoreCase("fat")) {
+            foodList.sort(Comparator.comparing(Food::calculateTotalFat).reversed());
+        } else if (criteria.equalsIgnoreCase("carbs")) {
+            foodList.sort(Comparator.comparing(Food::calculateTotalCarbs).reversed());
+        } else if (criteria.equalsIgnoreCase("kcal")) {
+            foodList.sort(Comparator.comparing(Food::calculateTotalKcal).reversed());
+        } else {
+            System.out.println("Invalid sorting criteria. Please choose from: name, protein, fat, carbs, kcal.");
+        }
     }
 
     public static void editFoodItem(Scanner scanner, Library foodLibrary) {
@@ -56,13 +87,13 @@ public class Library {
         System.out.println("                                          EDIT A FOOD ITEM                                         ");
         System.out.println("==================================================================================================\n");
 
-        System.out.println(foodLibrary.getLibrary());
+        System.out.println(foodLibrary.getLibrary(scanner));
         System.out.println("Enter the ID of the food item to edit:");
         int index = scanner.nextInt();
         scanner.nextLine();
 
         if (index <= 0 || index > foodLibrary.getFoodList().size()) {
-            System.out.println ("Invalid ID. Please try again.");
+            System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid ID. Please try again." + ConsoleColors.RESET);
             System.out.println("Press Enter to continue...");
             scanner.nextLine();
             clearConsole.ClearConsole();
@@ -96,13 +127,13 @@ public class Library {
         System.out.println("                                        DELETE A FOOD ITEM                                         ");
         System.out.println("==================================================================================================\n");
 
-        System.out.println(foodLibrary.getLibrary());
+        System.out.println(foodLibrary.getLibrary(scanner));
         System.out.println("Enter the ID of the food item to delete:");
         int index = scanner.nextInt();
         scanner.nextLine();
 
         if (index <= 0 || index > foodLibrary.getFoodList().size()) {
-            System.out.println("Invalid ID. Please try again.");
+            System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid ID. Please try again." + ConsoleColors.RESET);
             return;
         }
 

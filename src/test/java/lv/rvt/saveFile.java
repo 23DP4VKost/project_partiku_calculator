@@ -22,7 +22,7 @@ public class saveFile {
         } 
         
         catch (IOException e) {
-            System.out.println("Error saving to txt file: " + e.getMessage());
+            System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Error saving to txt file: " + e.getMessage() + ConsoleColors.RESET);
         }
     }
 }

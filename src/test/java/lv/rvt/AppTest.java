@@ -38,7 +38,7 @@ public class AppTest {
 
           if (choice2==1){
             clearConsole.ClearConsole();
-            System.out.println(foodLibrary.getLibrary());
+            System.out.println(foodLibrary.getLibrary(scanner));
               break;
             }
               
@@ -63,7 +63,7 @@ public class AppTest {
           }
  
       else{
-         System.out.println("Invalid choice. Please try again.");
+         System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid choice. Please try again." + ConsoleColors.RESET);
         }
     }
   }
