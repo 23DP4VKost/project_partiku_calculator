@@ -52,10 +52,10 @@ public class Library {
         System.out.println(productInfo.toString());
 
 
-        System.out.println("Would you like to sort the library? (yes/no)");
+        System.out.println(ConsoleColors.CYAN + "Would you like to sort the library? (yes/no)"+ ConsoleColors.RESET);
         String sortChoice = scanner.nextLine();
         if (sortChoice.equalsIgnoreCase("yes")) {
-            System.out.println("Enter sorting criteria (name, protein, fat, carbs, kcal):");
+            System.out.println(ConsoleColors.CYAN + "Enter sorting criteria (name, protein, fat, carbs, kcal):" + ConsoleColors.RESET);
             String criteria = scanner.nextLine();
             sortFoodList(criteria);
             System.out.println("Food library sorted by " + criteria + ".");
@@ -111,36 +111,36 @@ public class Library {
         System.out.println("==================================================================================================\n");
 
         System.out.println(foodLibrary.getLibrary(scanner));
-        System.out.println("Enter the ID of the food item to edit:");
+        System.out.println(ConsoleColors.CYAN + "Enter the ID of the food item to edit:" + ConsoleColors.RESET);
         int index = scanner.nextInt();
         scanner.nextLine();
 
         if (index <= 0 || index > foodLibrary.getFoodList().size()) {
             System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid ID. Please try again." + ConsoleColors.RESET);
-            System.out.println("Press Enter to continue...");
+            System.out.println(ConsoleColors.CYAN + "Press Enter to continue..."+ ConsoleColors.RESET);
             scanner.nextLine();
             clearConsole.ClearConsole();
             return;
         }
 
-        System.out.println("Enter new food name:");
+        System.out.println(ConsoleColors.CYAN + "Enter new food name:"+ ConsoleColors.RESET);
         String name = scanner.nextLine();
 
-        System.out.println("Enter new protein per 100g:");
+        System.out.println(ConsoleColors.CYAN + "Enter new protein per 100g:"+ ConsoleColors.RESET);
         double proteinPer100g = scanner.nextDouble();
-        System.out.println("Enter new fat per 100g:");
+        System.out.println(ConsoleColors.CYAN + "Enter new fat per 100g:"+ ConsoleColors.RESET);
         double fatPer100g = scanner.nextDouble();
-        System.out.println("Enter new carbs per 100g:");
+        System.out.println(ConsoleColors.CYAN + "Enter new carbs per 100g:"+ ConsoleColors.RESET);
         double carbsPer100g = scanner.nextDouble();
         double kcalPer100g = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
-        System.out.println("Enter the quantity consumed (in grams):");
+        System.out.println(ConsoleColors.CYAN + "Enter the quantity consumed (in grams):"+ ConsoleColors.RESET);
         double quantity = scanner.nextDouble();
         scanner.nextLine();
 
         Food food = new Food(name, proteinPer100g, fatPer100g, carbsPer100g, kcalPer100g, quantity);
         foodLibrary.editFood(index - 1, food);
-        System.out.println("Food item edited successfully.");
-        System.out.println("Press Enter to continue...");
+        System.out.println(ConsoleColors.GREEN + "Food item edited successfully."+ ConsoleColors.RESET);
+        System.out.println(ConsoleColors.CYAN + "Press Enter to continue..."+ ConsoleColors.RESET);
         scanner.nextLine();
         clearConsole.ClearConsole();
     }
@@ -151,7 +151,7 @@ public class Library {
         System.out.println("==================================================================================================\n");
 
         System.out.println(foodLibrary.getLibrary(scanner));
-        System.out.println("Enter the ID of the food item to delete:");
+        System.out.println(ConsoleColors.RED + "Enter the ID of the food item to delete:" + ConsoleColors.RESET);
         int index = scanner.nextInt();
         scanner.nextLine();
 
@@ -161,6 +161,6 @@ public class Library {
         }
 
         foodLibrary.deleteFood(index - 1);
-        System.out.println("Food item deleted successfully.");
+        System.out.println(ConsoleColors.RED_BACKGROUND + "Food item deleted successfully." + ConsoleColors.RESET);
     }
 }

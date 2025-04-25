@@ -13,7 +13,7 @@ public class AppTest {
     System.out.println("Track your food macros and calories easily!\n");
 
     while (true) {
-      System.out.println("Choose an option:");
+      System.out.println(ConsoleColors.CYAN +"Choose an option:" + ConsoleColors.RESET);
       System.out.println("+---------------------------------------+");
       System.out.println("| 1. Add a new food item                |");
       System.out.println("| 2. Food Library (View/Edit/Delete)    |");
@@ -28,7 +28,7 @@ public class AppTest {
       FoodAdd.addFoodItem(scanner, foodLibrary);
       } else if (choice == 2) {
       while (true) {
-        clearConsole.ClearConsole();
+        System.out.println(ConsoleColors.CYAN + "Choose an option:" + ConsoleColors.RESET );
         System.out.println("+-----------------------------+");
         System.out.println("| 1. View food library        |");
         System.out.println("| 2. Edit a food item         |");
