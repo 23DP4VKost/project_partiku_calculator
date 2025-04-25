@@ -19,36 +19,39 @@ public class FoodAdd {
             System.out.println("Enter protein per 100g:");
             proteinPer100g = scanner.nextDouble();
             if (proteinPer100g < 0) {
-                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Error: Value cannot be less than 0. Please try again." + ConsoleColors.RESET);
                 continue;
             }
 
             System.out.println("Enter fat per 100g:");
             fatPer100g = scanner.nextDouble();
             if (fatPer100g < 0) {
-                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Error: Value cannot be less than 0. Please try again." + ConsoleColors.RESET);
                 continue;
             }
 
             System.out.println("Enter carbs per 100g:");
             carbsPer100g = scanner.nextDouble();
             if (carbsPer100g < 0) {
-                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Error: Value cannot be less than 0. Please try again." + ConsoleColors.RESET);
                 continue;
             }
 
             System.out.println("Enter the quantity consumed (in grams):");
             quantity = scanner.nextDouble();
             if (quantity < 0) {
-                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Error: Value cannot be less than 0. Please try again." + ConsoleColors.RESET);
                 continue;
             }
 
             break;
         }
+        
 
         double kcal = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
         scanner.nextLine();
+
+        clearConsole.ClearConsole();
 
         Food food = new Food(name, proteinPer100g, fatPer100g, carbsPer100g,kcal,quantity);
         foodLibrary.addFood(food);

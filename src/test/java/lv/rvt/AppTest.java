@@ -28,7 +28,7 @@ public class AppTest {
       FoodAdd.addFoodItem(scanner, foodLibrary);
       } else if (choice == 2) {
       while (true) {
-        System.out.println("Choose an option:");
+        clearConsole.ClearConsole();
         System.out.println("+-----------------------------+");
         System.out.println("| 1. View food library        |");
         System.out.println("| 2. Edit a food item         |");

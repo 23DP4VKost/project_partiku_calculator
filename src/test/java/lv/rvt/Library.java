@@ -66,6 +66,10 @@ public class Library {
     }
 
     public void sortFoodList(String criteria) {
+        if (foodList.isEmpty()) {
+            System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "The food library is empty. Please add food items before sorting." + ConsoleColors.RESET);
+            return;
+        }
         if (criteria.equalsIgnoreCase("name")) {
             sortByName();
         } else if (criteria.equalsIgnoreCase("protein")) {
@@ -77,7 +81,7 @@ public class Library {
         } else if (criteria.equalsIgnoreCase("kcal")) {
             sortByKcal();
         } else {
-            System.out.println("Invalid sorting criteria. Please choose from: name, protein, fat, carbs, kcal.");
+            System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid sorting criteria. Please choose from: name, protein, fat, carbs, kcal."+ ConsoleColors.RESET);
         }
     }
 

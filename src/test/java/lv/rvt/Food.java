@@ -6,6 +6,7 @@ package lv.rvt;
     
         public Food(String name, double proteinPer100g, double fatPer100g, double carbsPer100g, double kcalPer100g, double quantity) {
             super(name, proteinPer100g, fatPer100g, carbsPer100g, kcalPer100g);
+            
             this.quantity = quantity;
         }
     
