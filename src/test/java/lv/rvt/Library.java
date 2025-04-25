@@ -66,20 +66,39 @@ public class Library {
     }
 
     public void sortFoodList(String criteria) {
-        
         if (criteria.equalsIgnoreCase("name")) {
-            foodList.sort(Comparator.comparing(Food::getName));
+            sortByName();
         } else if (criteria.equalsIgnoreCase("protein")) {
-            foodList.sort(Comparator.comparing(Food::calculateTotalProtein).reversed());
+            sortByProtein();
         } else if (criteria.equalsIgnoreCase("fat")) {
-            foodList.sort(Comparator.comparing(Food::calculateTotalFat).reversed());
+            sortByFat();
         } else if (criteria.equalsIgnoreCase("carbs")) {
-            foodList.sort(Comparator.comparing(Food::calculateTotalCarbs).reversed());
+            sortByCarbs();
         } else if (criteria.equalsIgnoreCase("kcal")) {
-            foodList.sort(Comparator.comparing(Food::calculateTotalKcal).reversed());
+            sortByKcal();
         } else {
             System.out.println("Invalid sorting criteria. Please choose from: name, protein, fat, carbs, kcal.");
         }
+    }
+
+    private void sortByName() {
+        foodList.sort(Comparator.comparing(Food::getName));
+    }
+
+    private void sortByProtein() {
+        foodList.sort(Comparator.comparing(Food::calculateTotalProtein).reversed());
+    }
+
+    private void sortByFat() {
+        foodList.sort(Comparator.comparing(Food::calculateTotalFat).reversed());
+    }
+
+    private void sortByCarbs() {
+        foodList.sort(Comparator.comparing(Food::calculateTotalCarbs).reversed());
+    }
+
+    private void sortByKcal() {
+        foodList.sort(Comparator.comparing(Food::calculateTotalKcal).reversed());
     }
 
     public static void editFoodItem(Scanner scanner, Library foodLibrary) {

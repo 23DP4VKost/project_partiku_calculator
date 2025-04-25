@@ -13,17 +13,39 @@ public class FoodAdd {
         System.out.println("Enter food name:");
         String name = scanner.nextLine();
 
-        System.out.println("Enter protein per 100g:");
-        double proteinPer100g = scanner.nextDouble();
+        double proteinPer100g, fatPer100g, carbsPer100g, quantity;
 
-        System.out.println("Enter fat per 100g:");
-        double fatPer100g = scanner.nextDouble();
+        while (true) {
+            System.out.println("Enter protein per 100g:");
+            proteinPer100g = scanner.nextDouble();
+            if (proteinPer100g < 0) {
+                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                continue;
+            }
 
-        System.out.println("Enter carbs per 100g:");
-        double carbsPer100g = scanner.nextDouble();
-        
-        System.out.println("Enter the quantity consumed (in grams):");
-        double quantity = scanner.nextDouble();
+            System.out.println("Enter fat per 100g:");
+            fatPer100g = scanner.nextDouble();
+            if (fatPer100g < 0) {
+                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                continue;
+            }
+
+            System.out.println("Enter carbs per 100g:");
+            carbsPer100g = scanner.nextDouble();
+            if (carbsPer100g < 0) {
+                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                continue;
+            }
+
+            System.out.println("Enter the quantity consumed (in grams):");
+            quantity = scanner.nextDouble();
+            if (quantity < 0) {
+                System.out.println("Error: Value cannot be less than 0. Please try again.");
+                continue;
+            }
+
+            break;
+        }
 
         double kcal = proteinPer100g * 4 + fatPer100g * 9 + carbsPer100g * 4;
         scanner.nextLine();
