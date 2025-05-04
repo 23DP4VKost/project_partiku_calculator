@@ -37,7 +37,7 @@ Lietojumprogramma darbojas konsolē un izmanto izvēlnes vadītu saskarni. Tā s
 4. Tiek parādīts apstiprinājuma ziņojums ar aprēķināto uzturvērtības informāciju.
 
 ### 2. Pārtikas bibliotēkas skatīšana
-1. Galvenajā izvēlnē atlasiet **2. iespēju** un pēc tam pārtikas bibliotēkas izvēlnē izvēlieties **1. opciju**.
+1. Galvenajā izvēlnē atlasiet **2. iespēju** un pēc tam pārtikas bibliotēkas izvēlnē izvēlieties **1. iespēju**.
 2. Programma tabulas formātā parāda visus pārtikas produktus, norādot to nosaukumu, daudzumu un kopējo uzturvērtību.
 3. Pēc apskates programma vaicā, vai kārtot bibliotēku:
 - Ievadiet “yes”, lai kārtotu bibliotēku pēc nosaukuma, olbaltumvielām, taukiem, ogļhidrātiem vai kalorijām.
