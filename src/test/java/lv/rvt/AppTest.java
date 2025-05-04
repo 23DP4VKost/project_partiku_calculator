@@ -39,17 +39,20 @@ public class AppTest {
         scanner.nextLine();
 
         if (choice2 == 1) {
-        clearConsole.ClearConsole();
-        System.out.println(foodLibrary.getLibrary(scanner));
-        break;
-        } else if (choice2 == 2) {
-        clearConsole.ClearConsole();
-        Library.editFoodItem(scanner, foodLibrary);
-        break;
-        } else if (choice2 == 3) {
-        Library.deleteFood(scanner, foodLibrary);
-        clearConsole.ClearConsole();
-        break;
+          clearConsole.ClearConsole();
+          System.out.println(foodLibrary.getLibrary(scanner));
+          break;
+        }else if (choice2 == 2) {
+          clearConsole.ClearConsole();
+          Library.editFoodItem(scanner, foodLibrary);
+          break;
+        }else if (choice2 == 3) {
+          Library.deleteFood(scanner, foodLibrary);
+          clearConsole.ClearConsole();
+          break;
+        }
+        else {
+          System.out.println(ConsoleColors.RED_BACKGROUND_BRIGHT + "Invalid choice. Please try again." + ConsoleColors.RESET);
         }
       }
       } else if (choice == 3) {
