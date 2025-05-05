@@ -56,7 +56,7 @@ Lietojumprogramma darbojas konsolē un izmanto izvēlnes vadītu saskarni. Tā s
 
 ### 5. Pārtikas bibliotēkas kārtošana
 1. Kārtošanu var veikt pēc bibliotēkas apskates vai atlasot kārtošanas opciju.
-2. Ievadiet kārtošanas kritērijus (`nosaukums`, `olbaltumvielas`, `tauki`, `ogļhidrāti` vai `kcal`).
+2. Ievadiet kārtošanas kritērijus (`name`, `protein`, `fat`, `carbs` vai `kcal`).
 3. Programma sakārto bibliotēku un parāda sakārtoto sarakstu.
 
 ### 6. Pārtikas bibliotēkas saglabāšana
